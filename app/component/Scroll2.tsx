@@ -7,7 +7,7 @@ import imageTarot from "@/app/assess/img/Tarot.png";
 
 export function ScrollAreaDemo2() {
   return (
-    <ScrollArea className="h-72 w-96 rounded-md border">
+    <ScrollArea className="h-72 lg:w-96 rounded-md border">
       <div className="p-4 mx-3">
         <Image
           className="w-18"

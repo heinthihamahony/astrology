@@ -7,7 +7,7 @@ import imageLove from "@/app/assess/img/Love.png";
 
 export function ScrollAreaDemo() {
   return (
-    <ScrollArea className="h-72 w-96 rounded-md border ">
+    <ScrollArea className="h-72 lg:w-96 rounded-md border ">
       <div className="p-4">
         <Image className="w-18" src={imageLove} alt="" width={60} height={60} />{" "}
         <h4 className="mb-4 text-5xl text-[#ffcc02] font-semibold text-center ">

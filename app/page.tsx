@@ -41,11 +41,12 @@ import imagetwelve from "@/app/assess/img/pisces.png";
 import { ScrollAreaDemo } from "./component/Scroll";
 import { ScrollAreaDemo2 } from "./component/Scroll2";
 import { ScrollAreaDemo3 } from "./component/Scroll3";
+import { DropdownMenuCheckboxes } from "./component/dropdown";
 
 export default function Home() {
   return (
     <div className="">
-      <div className=" mx-40">
+      <div className=" ld:mx-40 md:mx-12 md:border-b mx-3">
         <div className=" flex items-center justify-between mb-2">
           {/* Nav */}
 
@@ -57,7 +58,7 @@ export default function Home() {
             />
           </div>
           <div className=" flex gap-4 items-center">
-            <div className=" flex items-center gap-2">
+            <div className=" md:flex items-center hidden gap-2 md:flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -79,7 +80,7 @@ export default function Home() {
                 <p className=" text-lg font-semibold">09123456789</p>
               </div>
             </div>
-            <div className="">
+            <div className=" md:hidden lg:flex hidden">
               <button className=" border border-[#ffcc02] py-3 px-5 rounded-full">
                 Consult Now
               </button>
@@ -105,6 +106,42 @@ export default function Home() {
                 <p className=" text-[#999] font-semibold">SIGN IN</p>
               </a>
             </div>
+            <div className=" hidden md:flex">
+              <button className="border py-2 px-1 rounded-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffcc02"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="lucide lucide-bell-ring"
+                >
+                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                  <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                  <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+                  <path d="M22 8c0-2.3-.8-4.3-2-6" />
+                </svg>
+              </button>
+            </div>
+            <div className=" flex">
+              <NavigationMenuDemo />
+              <div className=" lg:hidden hidden md:flex">
+                <DropdownMenuCheckboxes />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="border-y py-4 flex justify-between items-center mx-3 md:hidden">
+        <a href="#" className=" border border-[#ffcc02] py-2 px-2 rounded-lg">
+          Consult Now
+        </a>
+        <div className=" flex gap-3">
+          <div className="">
             <div className="">
               <button className="border py-2 px-1 rounded-md">
                 <svg
@@ -126,16 +163,19 @@ export default function Home() {
                 </svg>
               </button>
             </div>
-            <div className="">
-              <NavigationMenuDemo />
-            </div>
+          </div>
+          <div className=" lg:hidden">
+            <DropdownMenuCheckboxes />
           </div>
         </div>
       </div>
-      <div className=" border-y">
-        <div className=" px-40 flex text-sm">
+      <div className=" border-y md:hidden lg:flex hidden">
+        <div className=" px-40 flex text-sm items-center">
           <a href="#" className="btn px-5 py-2 rounded-sm">
             Home
+          </a>
+          <a href="#" className="">
+            <NavigationMenuDemo2 />
           </a>
           <a href="#" className="btn px-5 py-2 rounded-sm">
             Consult Astrologers
@@ -164,52 +204,56 @@ export default function Home() {
           <a href="#" className="btn px-5 py-2 rounded-sm">
             Blog
           </a>
-          <a href="#" className="">
-            <NavigationMenuDemo2 />
-          </a>
         </div>
       </div>
-      <div className="mx-40">
-        <img
-          className=" w-full mt-6"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07yLpPahd1cbIrksklfURwYSH8UZVUs5hrA&usqp=CAU"
-          alt=""
-        />
-      </div>
-      <div className=" flex mx-40 justify-between items-center shadow-2xl rounded-lg py-4 px-10">
+      <div className="lg:mx-40 md:mx-12 mx-3">
         <div className="">
-          <p className="text-[#7e7e7e] text-xl text-center">
-            <span className=" font-bold">Sign Up</span> for <span>Free</span> &
-            consult <br /> with award winning astrologers
-          </p>
+          <img
+            className=" w-full mt-6 lg:flex md:flex hidden"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07yLpPahd1cbIrksklfURwYSH8UZVUs5hrA&usqp=CAU"
+            alt=""
+          />
+          <img
+            className=" w-full mt-6 lg:hidden md:hidden rounded-t-lg"
+            src="	https://images.astroyogi.com/astroyogi2017/english/images/banner/mobile%20(2).jpg"
+            alt=""
+          />
         </div>
-        <div className="bg-[#e2e2e2] px-14 py-8 rounded-tr-3xl rounded-bl-3xl flex">
-          <Select>
-            <SelectTrigger className="w-[80px]">
-              <SelectValue placeholder="+66" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">+66</SelectItem>
-              <SelectItem value="dark">+95</SelectItem>
-              <SelectItem value="system">+1</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className=" lg:flex md:flex justify-between items-center shadow-2xl rounded-lg py-4 lg:px-10">
+          <div className="">
+            <p className="text-[#7e7e7e] lg:text-xl md:text-xl text-2xl text-center ">
+              <span className=" font-bold">Sign Up</span> for <span>Free</span>{" "}
+              & <br /> consult with award winning astrologers
+            </p>
+          </div>
+          <div className="bg-[#e2e2e2] lg:px-14 lg:py-8 md:px-8 md:py-4 px-10 py-3 mx-10 my-5 lg:rounded-tr-3xl lg:rounded-bl-3xl md:rounded-tr-3xl md:rounded-bl-3xl flex">
+            <Select>
+              <SelectTrigger className="w-[80px]">
+                <SelectValue placeholder="+66" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="light">+66</SelectItem>
+                <SelectItem value="dark">+95</SelectItem>
+                <SelectItem value="system">+1</SelectItem>
+              </SelectContent>
+            </Select>
 
-          <Input className="w-40 input" />
-        </div>
-        <div className="">
-          <button className=" bg-[#ffcc02] py-3 px-24 border border-yellow-500 text-sm font-semibold rounded-md">
-            Sign Up
-          </button>
-          <p className=" text-[#ffcc02] text-sm mt-2">
-            Already Registered?{" "}
-            <span>
-              {" "}
-              <a href="#" className=" text-black underline">
-                Login
-              </a>
-            </span>{" "}
-          </p>
+            <Input className="lg:w-40 input" />
+          </div>
+          <div className=" md:pr-10 lg:pr-0 text-center">
+            <button className=" bg-[#ffcc02] lg:py-3 lg:px-20 md:px-10 md:py-3 px-16 py-3 border border-yellow-500 lg:text-sm md:text-sm font-semibold rounded-md">
+              Sign Up
+            </button>
+            <p className=" text-[#ffcc02] text-sm mt-2">
+              Already Registered?{" "}
+              <span>
+                {" "}
+                <a href="#" className=" text-black underline">
+                  Login
+                </a>
+              </span>{" "}
+            </p>
+          </div>
         </div>
       </div>
       <div className=" ">
@@ -217,8 +261,8 @@ export default function Home() {
           FREE DAILY <span className="text-[#665300]">HOROSCOPES</span>
         </p>
       </div>
-      <div className="flex justify-between mx-40 text-center mt-5">
-        <a href="#" className="">
+      <div className="lg:grid lg:grid-cols-12 lg:mx-40 grid grid-cols-3 text-center mt-5 md:mx-12 md:grid md:grid-cols-6 space-y-4">
+        <a href="#" className=" mx-auto mt-4 ">
           <Image
             className="w-18"
             src={imageone}
@@ -229,7 +273,7 @@ export default function Home() {
           <p className=" text-sm text-[#b31112]">Aries </p>
           <p className=" text-xs">21/3-19/4</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[66px]"
             src={imagetwo}
@@ -237,10 +281,10 @@ export default function Home() {
             width={60}
             height={60}
           />
-          <p className=" text-sm text-[#8a38a6]">Taurus </p>
+          <p className=" text-sm text-[#8a38a6]">Taurus</p>
           <p className=" text-xs">20/4-20/5</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[65px]"
             src={imagethree}
@@ -251,7 +295,7 @@ export default function Home() {
           <p className=" text-sm text-[#b5752d]">Gemini </p>
           <p className=" text-xs">21/5-20/6</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[67px]"
             src={imagefour}
@@ -262,7 +306,7 @@ export default function Home() {
           <p className=" text-sm text-[#4a3173]">Cancer </p>
           <p className=" text-xs">21/6-22/7</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[65px]"
             src={imagefive}
@@ -273,7 +317,7 @@ export default function Home() {
           <p className=" text-sm text-[#b75321]">Leo </p>
           <p className=" text-xs">23/7-22/8</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[66px]"
             src={imagesix}
@@ -284,7 +328,7 @@ export default function Home() {
           <p className=" text-sm pt-[3px] text-[#88475d]">Virgo </p>
           <p className=" text-xs">23/8-22/9 </p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[64px]"
             src={imageseven}
@@ -295,7 +339,7 @@ export default function Home() {
           <p className=" text-sm text-[#ac378d]">Libra </p>
           <p className=" text-xs">23/9-22/10</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[63px]"
             src={imageeight}
@@ -306,7 +350,7 @@ export default function Home() {
           <p className=" text-sm text-[#c29246]">Scorpio</p>
           <p className=" text-xs">23/10-21/11</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[67px]"
             src={imagenine}
@@ -317,7 +361,7 @@ export default function Home() {
           <p className=" text-sm text-[#2f7a8d]">Sagittarius </p>
           <p className=" text-xs">22/11-21/12</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[64px]"
             src={imageten}
@@ -328,7 +372,7 @@ export default function Home() {
           <p className=" text-sm text-[#4b6dad]">Capricorn </p>
           <p className=" text-xs">22/12-19/1</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-18"
             src={imageeleven}
@@ -339,7 +383,7 @@ export default function Home() {
           <p className=" text-sm text-[#9b6f4c]">Aquarius </p>
           <p className=" text-xs">20/1-18/2</p>
         </a>
-        <a href="#" className="">
+        <a href="#" className="mx-auto">
           <Image
             className="w-[62px]"
             src={imagetwelve}
@@ -357,9 +401,9 @@ export default function Home() {
             ONLINE <span className="text-[#665300]">ASTROLOGERS</span>
           </p>
         </div>
-        <div className=" grid grid-cols-4 mx-32 gap-2 mt-6">
-          <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+        <div className=" lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 lg:mx-32 md:mx-20 mx-8 gap-2 mt-6 space-y-2 ">
+          <div className=" border md:mt-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -475,7 +519,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg;gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -591,7 +635,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -707,7 +751,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -823,9 +867,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=" grid grid-cols-4 mx-32 gap-2 mt-2">
-          <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+        <div className=" lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 lg:mx-32 md:mx-20 mx-8 gap-2 mt-2 space-y-2">
+          <div className=" border md:mt-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -941,7 +985,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -1057,7 +1101,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -1173,7 +1217,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" border">
-            <div className=" flex gap-4 justify-center items-center bg-[#ffcc02] py-2">
+            <div className=" flex lg:gap-4 gap-12 justify-center items-center bg-[#ffcc02] py-2">
               <img
                 className=" w-16 rounded-full"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACUCAMAAABRNbASAAAAM1BMVEXl5uivtLjo6evFycyssbWvsrW1uLvCxsnc3uC7vsGxtbfV2NvLztDZ2tyqrrHQ0tXu7/Fq3jeNAAACgUlEQVR4nO2a626DMAxGiXHukPb9n3YBWrVbIaEbqZn0nT+dpko7suPEcdZ1AAAAAAAAAAAAAAAAAAAAAIB/BS1Ia6xA5C69tXYYu5P5UeesTpqZldbJXNyJ9Mj5rBWCyoT8wWqQVnpg9aJ1l1OKw3iK4E1hU6/wcAI7GsOam1L6BHYu6FU3pZK83WpOb5mNsnZkt92ynRN1G7dyumAl5TpfdJNNbCwldZLzcnJUqIaFJLjqUsVNqV4qdHTRoawWghdyy/tIqMoZsbz6euR0FHJzprrk8vl/ZrleSq7upljqkBj/vZxYWncVhNQuXJcL6SIlt2efG4XcqK/LyZ0Qrn7wW7GeiapuLLbkcltS6+dYsBOunREs1s5laCiELkiWw0xhqwtBcMXNFBIbtFypLuRWfUtOi7XoD7tha7MLsgvuZrdaFGykxWYople9JDuJeECdVfxtsslGuE6foWgT3+6J88S6O4/bTLTeTPjenWzW3xFdr9f5h+v1RG6zShx6vwQuh84O8f57YTM39rkcEj8VLE+PJb6PounNfzt6o3n98Gdt/CAVv2zWp0orzMmLFC5Fz7o+ZdLKfP5yGM207ZbVpi9MOzJ/NHrkbHmK/gPtP/eMSIOu3Qlfsvuxo9amEGqr7YdcSB8JHrmNh7ga3P7uv/lIWJdTrTsVcvqtUngm6MZ2Tr1XCt/tGr827ZjIFWl4rag/J1WD12w7LlwD96KbzSec+f16u0dON1p2+WA4QM40Cl06QC6kJv9wUpwovUGb9+HKk/lemozF3J9zutBiLlYfse6Va/CmQ/1Bck0WneeDUMe7dUN/EC2aYjqMBnIAAAAAAAAAAAAAAABwFr4AzxAYfhglFgEAAAAASUVORK5CYII="
@@ -1293,7 +1337,7 @@ export default function Home() {
       <p className="text-5xl text-center mt-12 font-semibold text-[#ffcc02]">
         ASTROLOGY READINGS
       </p>
-      <div className=" grid grid-cols-3 mx-32 gap-2 my-8">
+      <div className="lg:grid lg:grid-cols-3 md:grid-cols-1 md:mx-52 mx-12 lg:mx-32 lg:gap-8 my-8 space-y-5 lg:space-y-0 ">
         <ScrollAreaDemo />
         <ScrollAreaDemo2 />
         <ScrollAreaDemo3 />
@@ -1302,7 +1346,7 @@ export default function Home() {
         <p className=" text-5xl text-center mt-16 font-semibold text-[#545454]">
           CUSTOMER <span className="text-[#665300]">REVIEWS</span>
         </p>
-        <div className=" flex mx-32 gap-2 mt-5">
+        <div className=" lg:flex lg:mx-32 md:mx-20 mx-7 gap-2 mt-5 space-y-5 lg:space-y-0">
           <div className="border border-[#ffcc02] p-3 rounded-xl shadow-xl">
             <p className=" ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -1333,7 +1377,7 @@ export default function Home() {
         </div>
       </div>
       <footer className=" border border-y mt-20 py-5">
-        <div className=" flex justify-between mx-40">
+        <div className=" lg:grid lg:grid-cols-4 lg:mx-40 md:mx-10 md:grid md:grid-cols-2 md:gap-20 mx-8 space-y-4 md:space-y-0 lg:space-y-0">
           <div className="">
             <p className=" font-bold text-xl mb-3">ONLINE ADVICE</p>
             <div className=" text-sm">
@@ -1505,7 +1549,7 @@ export default function Home() {
                 <p>policy</p>
               </div>
             </div>
-            <div className="font-bold text-xl my-8">
+            <div className="font-bold text-xl my-8 ">
               <p>KEEP IN TOUCH</p>
               <div className=" flex gap-3 mt-1">
                 <div className="">

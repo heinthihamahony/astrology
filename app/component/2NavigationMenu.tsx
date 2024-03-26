@@ -17,39 +17,74 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
+    title: "Matchmarking",
     href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    description: "",
   },
   {
-    title: "Hover Card",
+    title: "Marrige",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "",
   },
   {
-    title: "Progress",
+    title: "Zodiac Signs",
     href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "",
   },
   {
-    title: "Scroll-area",
+    title: "Baby Names",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "",
   },
   {
-    title: "Tabs",
+    title: "Planet",
     href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    description: "",
   },
   {
-    title: "Tooltip",
+    title: "Palm Reading",
     href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    description: "",
+  },
+  {
+    title: "Vastu",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Remedies",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Chinese Astrology",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Spirituality",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Festival",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Vedic Astrology",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Astrologi Mobile Apps",
+    href: "/docs/primitives/tooltip",
+    description: "",
+  },
+  {
+    title: "Videos",
+    href: "/docs/primitives/tooltip",
+    description: "",
   },
 ];
 
@@ -61,8 +96,8 @@ export function NavigationMenuDemo2() {
           <NavigationMenuTrigger className=" font-normal">
             More
           </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 grid-cols-2">
+          <NavigationMenuContent className="">
+            <ul className="grid w-[400px] gap-3 p-4 grid-cols-2 ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

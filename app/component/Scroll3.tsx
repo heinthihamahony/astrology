@@ -7,7 +7,7 @@ import imageNUMEROLOGY from "@/app/assess/img/NUMEROLOGY.png";
 
 export function ScrollAreaDemo3() {
   return (
-    <ScrollArea className="h-72 w-96 rounded-md border">
+    <ScrollArea className="h-72 lg:w-96 rounded-md border flex">
       <div className="p-4 mx-3">
         <Image
           className="w-18"
@@ -16,7 +16,7 @@ export function ScrollAreaDemo3() {
           width={60}
           height={60}
         />{" "}
-        <h4 className="mb-4 text-5xl text-[#ffcc02] font-semibold text-center ">
+        <h4 className="mb-4 lg:text-5xl md:text-4xl text-[#ffcc02] font-semibold text-center ">
           NUMEROLOGY
         </h4>
         <Separator className="my-2" />
